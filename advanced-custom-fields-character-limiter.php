@@ -1,8 +1,8 @@
 <?php 
 /*
 Plugin Name: Advanced Custom Fields Character Limiter
-Plugin URI: https://gist.github.com/daltonrooney/d59b396f71f3efa6003a
-Description: Add a simple character limit to any ACF text field
+Plugin URI: https://github.com/daltonrooney/advanced-custom-fields-character-limiter/
+Description: Add "x characters left" display to any ACF text input or textarea field with a character limit.
 Version: 0.1
 Author: daltonrooney
 Author URI: http://www.madebyraygun.com
