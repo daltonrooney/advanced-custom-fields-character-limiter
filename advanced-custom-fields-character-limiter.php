@@ -3,7 +3,7 @@
 Plugin Name: Advanced Custom Fields Character Limiter
 Plugin URI: https://github.com/daltonrooney/advanced-custom-fields-character-limiter/
 Description: Add "x characters left" display to any ACF text input or textarea field with a character limit.
-Version: 0.1
+Version: 0.2
 Author: daltonrooney
 Author URI: http://www.madebyraygun.com
 
@@ -31,7 +31,7 @@ function acfcl_acf_admin_head() { ?>
     function addCharLimit(){
          $('.acf-input textarea, .acf-input input[type="text"]').each(function(){
             maxlength = $(this).attr("maxlength");
-            if ( maxlength !== undefined ) {
+            if ( maxlength !== undefined && maxlength > 0 ) {
                 charContainer = $(this).parent().find('p.charleft').val();
                 if ( charContainer === undefined ) {
                     $(this).parent().append("<p class='charleft description'>");
@@ -41,8 +41,7 @@ function acfcl_acf_admin_head() { ?>
             }
 
             $(this).keyup(function() {
-                maxlength = $(this).attr("maxlength");
-                if ( maxlength !== undefined ) {
+                if ( maxlength !== undefined  && maxlength > 0 ) {
                     charleft = maxlength - $(this).val().length;
                     $(this).parent().find('.charleft').html(charleft+" characters left.");
                 }
