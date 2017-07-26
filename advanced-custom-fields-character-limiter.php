@@ -41,6 +41,7 @@ function acfcl_acf_admin_head() { ?>
             }
 
             $(this).keyup(function() {
+                maxlength = $(this).attr("maxlength");
                 if ( maxlength !== undefined  && maxlength > 0 ) {
                     charleft = maxlength - $(this).val().length;
                     $(this).parent().find('.charleft').html(charleft+" characters left.");
